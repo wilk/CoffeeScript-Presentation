@@ -1,18 +1,33 @@
-.practice {
-	pre.javascript, textarea.coffee {
-		width: 470px;
+section {
+	.practice {
+		height: 457px;
+	
+		pre.javascript, textarea.coffee {
+			width: 470px;
+			height: inherit;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+	
+		pre.javascript {
+			float: right;
+			overflow-y: auto;
+			margin: 0 auto;
+		}
+
+		textarea.coffee {
+			float: left;
+			resize: none;
+			box-shadow: 0 0 6px rgba(0,0,0,.3);
+			border: 0;
+		}
 	}
 	
-	pre.javascript {
-		float: right;
-		overflow-y: scroll;
-		height: 487px;
-		margin: 0 auto;
-	}
-
-	textarea.coffee {
-		float: left;
-		resize: none;
-		height: 480px;
+	.debug {
+		height: 20px;
+		margin-top: 40px;
+		color: rgb(226, 69, 69);
+		font-style: italic;
+		font-size: 30px;
 	}
 }
