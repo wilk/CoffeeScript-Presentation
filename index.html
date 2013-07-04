@@ -1,21 +1,16 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
-
-		<title>Coffee Script - Javascript for lazy people</title>
-
+		<title>Coffee Script - Javascript for stressed developers</title>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
-
+		<link rel="stylesheet" href="lib/revealjs/css/reveal.min.css">
+		<link rel="stylesheet" href="lib/revealjs/css/theme/beige.css" id="theme">
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/revealjs/css/zenburn.css">
+		<link rel="stylesheet" href="stylesheets/presentation.css">
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -36,32 +31,25 @@
 				</section>
 				
 				<section>
-					<h2>Coffee Script</h2>
-					<div>
-						<textarea style="float: left; width: 49%; position: relative; top: 13px; height: 150px" class="coffeeCode"></textarea>
-						<pre class="javascriptCode" style="float:right; height: 155px; width: 50%">
-						</pre>
-					</div>
-				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<section>
+						<h2>Language Reference</h2>
+						<p>CoffeeScript uses significant whitespace to delimit blocks of code. Instead of using curly braces  { } to surround blocks of code, use indentation. You don't need to use parentheses to invoke a function if you're passing arguments. The implicit call wraps forward to the end of the line or block expression.</p>
+					</section>
+					<section>
+						<h3>Practice</h3>
+						<div class="practice">
+							<textarea class="coffee"></textarea>
+							<pre class="javascript"></pre>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>
 
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="lib/js/coffee-script.js"></script>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
+		<script src="lib/coffeescript/coffee-script.js"></script>
+		<script src="lib/revealjs/js/head.min.js"></script>
+		<script src="lib/revealjs/js/reveal.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/slides.js"></script>
 	</body>
