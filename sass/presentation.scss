@@ -1,0 +1,18 @@
+.practice {
+	pre.javascript, textarea.coffee {
+		width: 470px;
+	}
+	
+	pre.javascript {
+		float: right;
+		overflow-y: scroll;
+		height: 487px;
+		margin: 0 auto;
+	}
+
+	textarea.coffee {
+		float: left;
+		resize: none;
+		height: 480px;
+	}
+}
