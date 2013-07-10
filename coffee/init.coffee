@@ -5,6 +5,7 @@ Reveal.initialize
 	progress: true
 	history: true
 	center: true
+	rollingLinks: true
 	
 	theme: Reveal.getQueryHash().theme
 	transition: 'default'
