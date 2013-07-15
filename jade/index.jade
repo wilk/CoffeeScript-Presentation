@@ -1,0 +1,339 @@
+mixin practice
+	section
+		h3 Practice
+		div.practice
+			textarea.coffee
+			pre.javascript
+		div.debug
+
+doctype 5
+html
+	head
+		meta(charset='utf-8')
+		title Coffee Script - Javascript for stressed developers
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		link(rel="stylesheet", href="../lib/revealjs/css/reveal.min.css")
+		link(rel="stylesheet", href="../lib/revealjs/css/theme/beige.css", id="theme")
+		// For syntax highlighting
+		link(rel="stylesheet", href="../lib/revealjs/css/zenburn.css")
+		link(rel="stylesheet", href="../stylesheets/presentation.css")
+
+		// if lt IE 9
+			script(src="../lib/js/html5shiv.js")
+	body
+		div.reveal
+			// Any section element inside of this container is displayed as a slide
+			div.slides
+				section
+					h1 Coffee Script
+					h3 Compiled Javascript for stressed developers
+					p
+						small Created by
+							a(href="http://wilky.it") Vincenzo Ferrari
+							| / 
+							a(href="http://twitter.com/__wilky__") @__wilky__
+					img(src="../images/coffee.gif", alt="CoffeeScript")
+				
+				section
+					h2 What are we talking about?
+					p #Javascript #CompiledJavascript #ClientServerSide
+					small Another opportunity to write web apps for who doesn't like Javascript
+				
+				section
+					h2 Why not Javascript?
+					p It isn't a bad language (I like it) but:
+					ul
+						li it's verbose
+						li sometimes, it's not so clear
+						li it hasn't a real class system
+						li I'm looking for something easier
+				
+				section
+					section
+						h2 Overview
+						p CoffeeScript is a little language that compiles one-to-one into JavaScript and tends to run as fast or faster than the equivalent handwritten JavaScript.
+						p CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.
+					
+					section
+						h2 Compiler
+						p The CoffeeScript compiler is itself written in CoffeeScript, using the Jison parser generator. 
+						| The command-line version of coffee is available as a Node.js utility.
+						| The core compiler however, does not depend on Node, and can be run in any JavaScript environment, or in the browser.
+				
+				section
+					h2 Installation
+					p You can install CoffeeScript with npm:
+					small $ sudo npm install -g coffee-script
+					p Or, if you want to install to /usr/local, and don't want to use npm to manage it, open the coffee-script directory and run:
+					small $ sudo bin/cake install
+				
+				section
+					section
+						h2 Usage
+						p The coffee command can execute scripts, compile .coffee files into .js, and provide an interactive REPL:
+						small $ coffee
+					
+					section
+						h2 Options
+						table
+							tr
+								td.command
+									small -c, --compile
+								td Compile a .coffee script into a .js JavaScript file of the same name.
+							tr
+								td.command
+									small -m, --map
+								td Generate source maps alongside the compiled JavaScript files. Adds sourceMappingURL directives to the JavaScript as well.
+							tr
+								td.command
+									small -o, --output
+								td Write out all compiled JavaScript files into the specified directory. Use in conjunction with --compile or --watch.
+							tr
+								td.command
+									small -j, --join
+								td Before compiling, concatenate all scripts together in the order they were passed, and write them into the specified file.
+							tr
+								td.command
+									small -w, --watch
+								td Watch files for changes, rerunning the specified command when any file is updated.
+					
+					section
+						h2 Examples
+						table
+							tr
+								td.command
+									small coffee --compile --output lib/ src/
+								td Compile a directory tree of .coffee files in src into a parallel tree of .js files in lib
+							tr
+								td.command
+									small coffee --watch --compile experimental.coffee
+								td Watch a file for changes, and recompile it every time the file is saved
+							tr
+								td.command
+									small coffee --join project.js --compile src/*.coffee
+								td Concatenate a list of files into a single script
+							tr
+								td.command
+									small coffee -o lib/ -cw src/
+								td watch and recompile an entire project as you work on it:
+				
+				section
+					h2 Language Reference
+					p CoffeeScript uses significant whitespace to delimit blocks of code. Instead of using curly braces  { } to surround blocks of code, use indentation.
+					| You don't need to use parentheses to invoke a function if you're passing arguments. The implicit call wraps forward to the end of the line or block expression.
+				
+				section
+					section
+						h2 Literals
+						p CoffeeScript redefines literals, like functions, objects and arrays in a very cool way.
+					
+					section
+						h3 Functions
+						p Functions are defined by an optional list of parameters in parentheses, an arrow, and the function body. The empty function looks like this: ->
+						| Functions may also have default values for arguments. Override the default value by passing a non-null argument.
+					
+					mixin practice
+					
+					section
+						h3 Arrays & Objects
+						p The CoffeeScript literals for objects and arrays look very similar to their JavaScript cousins. When each property is listed on its own line, the commas are optional.
+						| Objects may be created using indentation instead of explicit braces, similar to YAML.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Lexical scoping
+						p The CoffeeScript compiler takes care to make sure that all of your variables are properly declared within lexical scope — you never need to write  var yourself.
+					
+					section
+						h3 Variable safety
+						p All CoffeeScript output is wrapped in an anonymous function:  (function(){ ... })(); 
+						| This safety wrapper, combined with the automatic generation of the var keyword, make it exceedingly difficult to pollute the global namespace by accident. 
+						| If you'd like to create top-level variables for other scripts to use, attach them as properties on window.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Conditions
+						p If/else statements can be written without the use of parentheses and curly brackets. 
+						| As with functions and other block expressions, multi-line conditionals are delimited by indentation.
+						| There's also a handy postfix form, with the if or unless at the end.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Splats
+						p The JavaScript arguments object is a useful way to work with functions that accept variable numbers of arguments.
+						| CoffeeScript provides splats ..., both for function definition as well as invocation, making variable numbers of arguments a little bit more palatable.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Loops and comprehensions
+						p Most of the loops you'll write in CoffeeScript will be comprehensions over arrays, objects, and ranges.
+						| Comprehensions replace (and compile into) for loops, with optional guard clauses and the value of the current array index.
+						| Unlike for loops, array comprehensions are expressions, and can be returned and assigned.
+					
+					mixin practice
+					
+					section
+						h3 Comprehensions tips'n'tricks
+						ul
+							li To step through a range comprehension in fixed-size chunks, use by
+							li To step over the keys and values of an object, use of
+							li To step over just the keys that are defined on the object itself, use own
+							li To step over the values of an array, use in
+					
+					mixin practice
+					
+					section
+						h3 Low-level loops
+						p The only low-level loop that CoffeeScript provides is the while loop.
+						| The main difference from JavaScript is that the while loop can be used as an expression, returning an array containing the result of each iteration through the loop.
+						| The until keyword is equivalent to while not, and the loop keyword is equivalent to while true.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Ranges
+						p Ranges can also be used to extract slices of arrays.
+						| With two dots (3..6), the range is inclusive (3, 4, 5, 6); with three dots (3...6), the range excludes the end (3, 4, 5).
+						|Slices indices have useful defaults. An omitted first index defaults to zero and an omitted second index defaults to the size of the array.
+						| The same syntax can be used with assignment to replace a segment of an array with new values, splicing it.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Operators and Aliases
+						table.aliases
+							tr
+								th CoffeeScript
+								th Javascript
+							tr
+								td #{'=='}, is
+								td #{'==='}
+							tr
+								td #{'!='}, isnt
+								td #{'!=='}
+							tr
+								td not
+								td #{'!'}
+							tr
+								td and
+								td #{'&&'}
+							tr
+								td or
+								td #{'||'}
+							tr
+								td yes, on
+								td true
+							tr
+								td no, off
+								td false
+							tr
+								td #{'@'}
+								td this
+							tr
+								td of
+								td in
+					
+					mixin practice
+					
+					section
+						h3 The Existential Operator
+						p CoffeeScript's existential operator ? returns true unless a variable is null or undefined, which makes it analogous to Ruby's nil?
+						| The accessor variant of the existential operator ?. can be used to soak up null references in a chain of properties.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Classes
+						p CoffeeScript provides a basic class structure that allows you to name your class, set the superclass, assign prototypal properties, and define the constructor, in a single assignable expression.
+						| Constructor functions are named, to better support helpful stack traces.
+						| The extends operator helps with proper prototype setup, and can be used to create an inheritance chain between any pair of constructor functions; :: gives you quick access to an object's prototype; and super() is converted into a call against the immediate ancestor's method of the same name.
+						| You can assign static properties by using @property: value, and call functions defined in parent classes.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Destructuring Assignment
+						p CoffeeScript implements ECMAScript Harmony's proposed destructuring assignment syntax. When you assign an array or object literal to a value, CoffeeScript breaks up and matches both sides against each other, assigning the values on the right to the variables on the left.
+					
+					mixin practice
+					
+					section
+						h3 Tips'n'tricks
+						ul
+							li helpful for dealing with functions that return multiple values
+							li can be used with any depth of array and object nesting, to help pull out deeply nested properties
+							li can even be combined with splats
+							li useful when combined with class constructors to assign properties to your instance from an options object passed to the constructor
+					
+					mixin practice
+				
+				section
+					section
+						h2 Function Binding
+						p The fat arrow => can be used to both define a function, and to bind it to the current value of this, right on the spot.
+						| Functions created with the fat arrow are able to access properties of the this where they're defined.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Embedded JavaScript
+						p Hopefully, you'll never need to use it, but if you ever need to intersperse snippets of JavaScript within your CoffeeScript, you can use backticks to pass it straight through.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Switch/When/Else
+						p CoffeeScript prevents accidental fall-through, and can convert the switch into a returnable, assignable expression. The format is: switch condition,  when clauses, else the default case.
+						| As in Ruby, switch statements in CoffeeScript can take multiple values for each when clause. If any of the values match, the clause runs.
+						| Switch statements can also be used without a control expression, turning them in to a cleaner alternative to if/else chains.
+					
+					mixin practice
+				
+				section
+					section
+						h2 Chained Comparisons
+						p CoffeeScript borrows chained comparisons from Python — making it easy to test if a value falls within a certain range.
+					
+					mixin practice
+				
+				section
+					section
+						h2 String Interpolation, Block Strings and Block Comments
+						p Ruby-style string interpolation is included in CoffeeScript. Double-quoted strings allow for interpolated values, using #{'#{ ... }'}, and single-quoted strings are literal.
+						| The indentation level that begins the block is maintained throughout, so you can keep it all aligned with the body of your code.
+					
+					mixin practice
+				
+				section
+					h2 Cake & Cakefiles
+					p CoffeeScript includes a (very) simple build system similar to Make and Rake. Naturally, it's called Cake, and is used for the tasks that build and test the CoffeeScript language itself. Tasks are defined in a file named Cakefile, and can be invoked by running cake [task] from within the directory. To print a list of all the tasks and options, just type cake.
+				
+				section
+					h2 Source Maps
+					p CoffeeScript 1.6.1 and above include support for generating source maps, a way to tell your JavaScript engine what part of your CoffeeScript program matches up with the code being evaluated.
+				
+				section
+					h2 Credits
+
+		script(src="../lib/jquery/jquery-1.10.2.min.js")
+		script(src="../lib/coffeescript/coffee-script.js")
+		script(src="../lib/revealjs/js/head.min.js")
+		script(src="../lib/revealjs/js/reveal.min.js")
+		script(src="../js/init.js")
+		script(src="../js/slides.js")

@@ -23,6 +23,15 @@ section {
 		}
 	}
 	
+	table td.command {
+		white-space: nowrap;
+	}
+	
+	table.aliases {
+		margin: 0 auto;
+		width: 45%;
+	}
+	
 	.debug {
 		height: 20px;
 		margin-top: 40px;
