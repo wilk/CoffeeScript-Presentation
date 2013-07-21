@@ -6,7 +6,10 @@
 		"email": "wilk3ert@gmail.com" ,
 		"web": "http://www.wilky.it"
 	} ,
-	"homepage": "https://github.com/wilk/CoffeeScript-Presentation" ,
+	"repository": {
+		"type": "git" ,
+		"url": "https://github.com/wilk/CoffeeScript-Presentation.git"
+	} ,
 	"dependencies": {
 		"coffee-script": "~1.3"
 	} ,
