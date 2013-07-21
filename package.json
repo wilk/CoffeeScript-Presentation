@@ -1,0 +1,14 @@
+{
+	"name": "CoffeeScriptPresentation" ,
+	"description": "A CoffeeScript presentation built with CoffeeScript, SASS and Jade" ,
+	"author": "Vincenzo Ferrari (Wilk) <ilk3ert@gmail.com>" ,
+	"homepage": "https://github.com/wilk/CoffeeScript-Presentation" ,
+	"dependencies": {
+		"coffee": "~1.3" ,
+		"jade": "~0.33" ,
+		"sass": "~3.1"
+	} ,
+	"devDependencies": {
+		"grunt": "~0.4"
+	}
+}

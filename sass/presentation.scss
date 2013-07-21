@@ -1,4 +1,16 @@
 section {
+	span.pad-el {
+		display: inline-block;
+		background: #fff;
+		border: 1px solid #dedede;
+		padding: 0px 0.2em;
+		font-size: 30px;
+		line-height: 38px;
+		color: #155;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	
 	.practice {
 		height: 457px;
 	

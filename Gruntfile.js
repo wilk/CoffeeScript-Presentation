@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 					expand: true ,
 					cwd: 'sass' ,
 					src: ['*.scss'] ,
-					dest: '../stylesheets/' ,
+					dest: 'css/' ,
 					ext: '.css'
 				}]
 			}
@@ -46,14 +46,14 @@ module.exports = function (grunt) {
 				options: {
 					sourceMap: true
 				} ,
-				glob_to_multiple: {
+				files: [{
 					expand: true ,
 					flatten: true ,
 					cwd: 'coffee' ,
 					src: ['*.coffee'] ,
-					dest: '../js/' ,
+					dest: 'js/' ,
 					ext: '.js'
-				}
+				}]
 			}
 		}
 	});

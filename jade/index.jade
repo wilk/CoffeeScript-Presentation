@@ -18,7 +18,7 @@ html
 		link(rel="stylesheet", href="../lib/revealjs/css/theme/beige.css", id="theme")
 		// For syntax highlighting
 		link(rel="stylesheet", href="../lib/revealjs/css/zenburn.css")
-		link(rel="stylesheet", href="../stylesheets/presentation.css")
+		link(rel="stylesheet", href="../css/presentation.css")
 
 		// if lt IE 9
 			script(src="../lib/js/html5shiv.js")
@@ -39,7 +39,7 @@ html
 				section
 					h2 What are we talking about?
 					p #Javascript #CompiledJavascript #ClientServerSide
-					small Another opportunity to write web apps for who doesn't like Javascript
+					small Another opportunity to write web apps for the ones that don't like Javascript
 				
 				section
 					h2 Why not Javascript?
@@ -66,13 +66,19 @@ html
 					h2 Installation
 					p You can install CoffeeScript with npm:
 					small $ sudo npm install -g coffee-script
-					p Or, if you want to install to /usr/local, and don't want to use npm to manage it, open the coffee-script directory and run:
+					p Or, if you want to install to 
+						span.pad-el /usr/local
+						|, and don't want to use npm to manage it, open the coffee-script directory and run:
 					small $ sudo bin/cake install
 				
 				section
 					section
 						h2 Usage
-						p The coffee command can execute scripts, compile .coffee files into .js, and provide an interactive REPL:
+						p The coffee command can execute scripts, compile 
+							span.pad-el .coffee
+							| files into 
+							span.pad-el .js
+							| , and provide an interactive REPL:
 						small $ coffee
 					
 					section
