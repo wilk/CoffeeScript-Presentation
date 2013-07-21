@@ -66,5 +66,5 @@ module.exports = function (grunt) {
 	
 	grunt.registerTask ('compile', ['jade', 'sass', 'coffee']);
 	
-	grunt.registerTask ('serve', ['connect', 'watch']);
+	grunt.registerTask ('serve', ['compile', 'connect', 'watch']);
 };
