@@ -1,4 +1,5 @@
 {
+	"version": "0.1.7" ,
 	"name": "CoffeeScriptPresentation" ,
 	"description": "A CoffeeScript presentation built with CoffeeScript, SASS and Jade" ,
 	"author": {
